@@ -5,8 +5,6 @@
 
 #define TWO_MONTHS 5097600
 #define SECONDS_IN_YEAR 31536000
-#define START_2016 1451606400
-#define START_2018 1514764800
 
 
 double tSeconds(int seconds) {
@@ -28,7 +26,7 @@ void printTTime(double time) {
   struct tm *t = localtime(&date);
   printf("%d/%d/%d - ", t->tm_mday, t->tm_mon+1, t->tm_year+1900);
 
-  printf("%2d:%2d:%5.3f\n", hours, minutes, seconds);
+  printf("%2d:%2d:%6.3f\n", hours, minutes, seconds);
 }
 
 void handleSIGALRM() {
