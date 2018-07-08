@@ -24,9 +24,9 @@ void printTTime(double time) {
 
   time_t date = time;
   struct tm *t = localtime(&date);
-  printf("%d/%d/%d - ", t->tm_mday, t->tm_mon+1, t->tm_year+1900);
-
-  printf("%2d:%2d:%6.3f\n", hours, minutes, seconds);
+  printf("\r%d/%d/%d - %2d:%2d:%6.3f", t->tm_mday, t->tm_mon+1, t->tm_year+1900,
+                                       hours, minutes, seconds);
+  fflush(stdout);
 }
 
 void handleSIGALRM() {
